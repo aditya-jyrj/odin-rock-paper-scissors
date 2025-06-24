@@ -22,15 +22,13 @@ console.log(`${rock}, ${paper}, ${scissors}`);
 humanScore    = 0;
 computerScore = 0;
 
-for (let i = 0; i < 5; i++) {
-    let result = playRound(getHumanChoice().toLowerCase(), getComputerChoice())
-    if (result === "You win!") {
-        humanScore++;
-    } else if (result === "You lose!") {
-        computerScore++;
-    }
-    console.log(`${result} The current score is ${humanScore}:${computerScore}`);
+let result = playRound(getHumanChoice().toLowerCase(), getComputerChoice())
+if (result === "You win!") {
+    humanScore++;
+} else if (result === "You lose!") {
+    computerScore++;
 }
+console.log(`${result} The current score is ${humanScore}:${computerScore}`);
 
 console.log(`The final score is ${humanScore}:${computerScore}!`)
 
@@ -47,9 +45,9 @@ function getComputerChoice() {
 }
 
 
-function getHumanChoice() {
-    return prompt("What's your move, punk?");
-}
+// function getHumanChoice() {
+//     return prompt("What's your move, punk?");
+// }
 
 
 function playRound(humanChoice, computerChoice) {
