@@ -21,15 +21,16 @@ console.log(`${rock}, ${paper}, ${scissors}`);
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button =>
-    button.addEventListener("click", () => {
-        console.log(button.className);
-        const humanChoice = button.className;
-        const computerChoice = getComputerChoice();
-    })
+    button.addEventListener("click", playRound(button.className))
 );
 
 humanScore    = 0;
 computerScore = 0;
+
+function playRound(humanChoice) {
+    const computerChoice = getComputerChoice();
+    const winner = decideWinner(humanChoice, computerChoice)
+}
 
 // let result = playRound(getHumanChoice().toLowerCase(), getComputerChoice())
 // if (result === "You win!") {
