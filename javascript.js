@@ -43,14 +43,8 @@ computerScore = 0;
 
 
 function getComputerChoice() {
-    let randomValue = Math.random() * 3
-    if (randomValue < 1) {
-        return "rock";
-    } else if (randomValue < 2) {
-        return "paper";
-    } else {
-        return "scissors"
-    }
+    const options = ["rock", "paper", "scissors"];
+    return options[Math.floor(Math.random() * 3)];
 }
 
 
