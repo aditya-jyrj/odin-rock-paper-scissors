@@ -19,15 +19,12 @@ for (let i = 0; i < 100000; i++) {
 console.log(`${rock}, ${paper}, ${scissors}`);
 */
 
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
-
-const button = document.querySelector("button");
-
-button.addEventListener("click", (event) => {
-    console.log(event.target);
-})
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button =>
+    button.addEventListener("click", event =>
+        console.log(button.className)
+    )
+);
 
 
 
@@ -45,16 +42,16 @@ computerScore = 0;
 // console.log(`The final score is ${humanScore}:${computerScore}!`)
 
 
-function getComputerChoice() {
-    let randomValue = Math.random() * 3
-    if (randomValue < 1) {
-        return "rock";
-    } else if (randomValue < 2) {
-        return "paper";
-    } else {
-        return "scissors"
-    }
-}
+// function getComputerChoice() {
+//     let randomValue = Math.random() * 3
+//     if (randomValue < 1) {
+//         return "rock";
+//     } else if (randomValue < 2) {
+//         return "paper";
+//     } else {
+//         return "scissors"
+//     }
+// }
 
 
 // function getHumanChoice() {
@@ -62,19 +59,19 @@ function getComputerChoice() {
 // }
 
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice.target === computerChoice) {
-        return "It's a tie!"
-    }
+// function playRound(humanChoice, computerChoice) {
+//     if (humanChoice.target === computerChoice) {
+//         return "It's a tie!"
+//     }
 
-    if (
-        (humanChoice === "rock" && computerChoice === "scissors") ||
-        (humanChoice === "paper" && computerChoice === "rock") ||
-        (humanChoice === "scissors" && computerChoice === "paper")
-    ) {
-        return "You win!";
-    } else {
-        return "You lose!";
-    }
+//     if (
+//         (humanChoice === "rock" && computerChoice === "scissors") ||
+//         (humanChoice === "paper" && computerChoice === "rock") ||
+//         (humanChoice === "scissors" && computerChoice === "paper")
+//     ) {
+//         return "You win!";
+//     } else {
+//         return "You lose!";
+//     }
 
-}
+// }
