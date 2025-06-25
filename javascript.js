@@ -19,18 +19,30 @@ for (let i = 0; i < 100000; i++) {
 console.log(`${rock}, ${paper}, ${scissors}`);
 */
 
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+
+const button = document.querySelector("button");
+
+button.addEventListener("click", (event) => {
+    console.log(event.target);
+})
+
+
+
 humanScore    = 0;
 computerScore = 0;
 
-let result = playRound(getHumanChoice().toLowerCase(), getComputerChoice())
-if (result === "You win!") {
-    humanScore++;
-} else if (result === "You lose!") {
-    computerScore++;
-}
-console.log(`${result} The current score is ${humanScore}:${computerScore}`);
+// let result = playRound(getHumanChoice().toLowerCase(), getComputerChoice())
+// if (result === "You win!") {
+//     humanScore++;
+// } else if (result === "You lose!") {
+//     computerScore++;
+// }
+// console.log(`${result} The current score is ${humanScore}:${computerScore}`);
 
-console.log(`The final score is ${humanScore}:${computerScore}!`)
+// console.log(`The final score is ${humanScore}:${computerScore}!`)
 
 
 function getComputerChoice() {
@@ -51,7 +63,7 @@ function getComputerChoice() {
 
 
 function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
+    if (humanChoice.target === computerChoice) {
         return "It's a tie!"
     }
 
