@@ -6,6 +6,8 @@ buttons.forEach(button =>
     button.addEventListener("click", () => playRound(button.className))
 );
 
+
+
 function playRound(humanChoice) {
     const computerChoice = getComputerChoice();
     console.log(`You picked ${humanChoice}!`);
@@ -15,10 +17,12 @@ function playRound(humanChoice) {
     updatePoints(winner);
 }
 
+
 function getComputerChoice() {
     const options = ["rock", "paper", "scissors"];
     return options[Math.floor(Math.random() * 3)];
 }
+
 
 function decideWinner(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -39,6 +43,7 @@ function decideWinner(humanChoice, computerChoice) {
     }    
 }
 
+
 function updatePoints(winner) {
     if (winner === "human") {
         humanScore++;
@@ -47,15 +52,3 @@ function updatePoints(winner) {
     }
     console.log(`The score is ${humanScore}: ${computerScore}.`);
 }
-
-// let result = playRound(getHumanChoice().toLowerCase(), getComputerChoice())
-// if (result === "You win!") {
-//     humanScore++;
-// } else if (result === "You lose!") {
-//     computerScore++;
-// }
-// console.log(`${result} The current score is ${humanScore}:${computerScore}`);
-
-// console.log(`The final score is ${humanScore}:${computerScore}!`)
-
-
