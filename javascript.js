@@ -21,12 +21,12 @@ console.log(`${rock}, ${paper}, ${scissors}`);
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button =>
-    button.addEventListener("click", event =>
-        console.log(button.className)
-    )
+    button.addEventListener("click", () => {
+        console.log(button.className);
+        const humanChoice = button.className;
+        const computerChoice = getComputerChoice();
+    })
 );
-
-
 
 humanScore    = 0;
 computerScore = 0;
@@ -42,21 +42,17 @@ computerScore = 0;
 // console.log(`The final score is ${humanScore}:${computerScore}!`)
 
 
-// function getComputerChoice() {
-//     let randomValue = Math.random() * 3
-//     if (randomValue < 1) {
-//         return "rock";
-//     } else if (randomValue < 2) {
-//         return "paper";
-//     } else {
-//         return "scissors"
-//     }
-// }
+function getComputerChoice() {
+    let randomValue = Math.random() * 3
+    if (randomValue < 1) {
+        return "rock";
+    } else if (randomValue < 2) {
+        return "paper";
+    } else {
+        return "scissors"
+    }
+}
 
-
-// function getHumanChoice() {
-//     return prompt("What's your move, punk?");
-// }
 
 
 // function playRound(humanChoice, computerChoice) {
