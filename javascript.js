@@ -50,5 +50,6 @@ function updatePoints(winner) {
     } else if (winner === "computer") {
         computerScore++;
     }
-    console.log(`The score is ${humanScore}: ${computerScore}.`);
+    console.log(`The score is ${humanScore}: ${computerScore}.
+        `);
 }
