@@ -8,16 +8,23 @@ const whoWon = document.querySelector(".text")
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach(button =>
-    button.addEventListener("click", () => playRound(button.className))
+    button.addEventListener("click", () => playRound(button))
 );
 
 
 
-function playRound(humanChoice) {
-    const computerChoice = getComputerChoice();
+function playRound(humanButton) {
+    clearHighlights();
+    
+    let humanChoice = humanButton.dataset.choice;
+    let computerChoice = getComputerChoice();
+    let computerButton = document.querySelector(`button[data-choice="${computerChoice}"]`);
+
+
     console.log(`You picked ${humanChoice}!`);
     console.log(`The enemy picked ${computerChoice}!`);
 
+    updateHighlights(humanButton, computerButton);
     const winner = decideWinner(humanChoice, computerChoice)
     updatePoints(winner);
 }
@@ -28,6 +35,14 @@ function getComputerChoice() {
     return options[Math.floor(Math.random() * 3)];
 }
 
+function updateHighlights(humanButton, computerButton) {
+    if (humanButton === computerButton) {
+        humanButton.classList.add("tie-button");
+    } else {
+        humanButton.classList.add("human-selected-button");
+        computerButton.classList.add("computer-selected-button");
+    }
+}
 
 function decideWinner(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -63,4 +78,10 @@ function updatePoints(winner) {
     whoWon.textContent = tempText;
     console.log(`The score is ${humanScore}: ${computerScore}.
         `);
+}
+
+function clearHighlights() {
+    buttons.forEach(button => {
+        button.classList.remove("human-selected-button", "computer-selected-button", "tie-button");
+    })
 }

@@ -77,11 +77,35 @@ img {
 }
 
 button:hover {
-    background-color: rgb(208, 255, 241);
     transform: scale(1.05);
 }
 
 button:hover img {
-    border: solid 1px rgb(134, 255, 219);
     filter: grayscale(0);
+}
+
+.human-selected-button {
+    background-color: aquamarine;
+}
+
+.human-selected-button img {
+    border: solid 1px rgb(41, 233, 169);
+    filter: grayscale(0);
+}
+
+.computer-selected-button {
+    background-color: rgb(255, 172, 172);
+}
+
+.computer-selected-button img {
+    border: solid 1px rgb(244, 110, 110);
+    filter: grayscale(0);
+}
+
+.tie-button {
+    background-color: rgb(248, 243, 114);
+}
+
+.tie-button img {
+    border: solid 1px rgb(255, 218, 85);
 }
