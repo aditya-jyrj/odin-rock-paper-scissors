@@ -1,6 +1,9 @@
 let humanScore    = 0;
 let computerScore = 0;
 
+const humanScoreDisplay = document.querySelector(".human-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
+
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button =>
     button.addEventListener("click", () => playRound(button.className))
@@ -47,8 +50,10 @@ function decideWinner(humanChoice, computerChoice) {
 function updatePoints(winner) {
     if (winner === "human") {
         humanScore++;
+        humanScoreDisplay.textContent = `${humanScore}`;
     } else if (winner === "computer") {
         computerScore++;
+        computerScoreDisplay.textContent = `${computerScore}`;
     }
     console.log(`The score is ${humanScore}: ${computerScore}.
         `);
