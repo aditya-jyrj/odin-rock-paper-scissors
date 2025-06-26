@@ -1,11 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: Inter, sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 48px;
+    padding: 0;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+p {
+    font-size: 28px;
+    font-weight: 300;
+}
+
 .container {
+    padding: 12px;
+    text-align: center;
+}
+
+.scoreboard {
+    display: inline-flex;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 12px;
+    border-radius: 8px;
+    width: auto;
+
+    background-color: rgb(199, 240, 253);
+}
+
+.scoreboard-section {
+    padding: 0 16px;
+
+    border: 1px solid gray;
+    border-radius: 5px;
+    
+    min-width: 72px;
+}
+
+.player {
+    border-bottom: 1px dashed gray;
+}
+
+.buttons {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 16px;
 }
 
 button {
-    margin: 10% 20px;
+    margin: 12px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -15,5 +68,4 @@ button {
 img {
     border-radius: 50%;
     border: solid 1px lightgray;
-    margin: auto;
 }
