@@ -6,6 +6,7 @@ const computerScoreDisplay = document.querySelector(".computer-score");
 const whoWon = document.querySelector(".text")
 
 const buttons = document.querySelectorAll("button");
+
 buttons.forEach(button =>
     button.addEventListener("click", () => playRound(button.className))
 );

@@ -73,4 +73,14 @@ button {
 img {
     border-radius: 50%;
     border: solid 1px lightgray;
+    filter: grayscale(90%);
+}
+
+button:hover {
+    background-color: rgb(208, 255, 241);
+}
+
+button:hover img {
+    border: solid 1px rgb(134, 255, 219);
+    filter: grayscale(0);
 }
