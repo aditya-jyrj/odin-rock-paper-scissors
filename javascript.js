@@ -3,6 +3,7 @@ let computerScore = 0;
 
 const humanScoreDisplay = document.querySelector(".human-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
+const whoWon = document.querySelector(".text")
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button =>
@@ -48,13 +49,17 @@ function decideWinner(humanChoice, computerChoice) {
 
 
 function updatePoints(winner) {
+    let tempText = "It's a tie.";
     if (winner === "human") {
         humanScore++;
         humanScoreDisplay.textContent = `${humanScore}`;
+        tempText = "You win!"
     } else if (winner === "computer") {
         computerScore++;
         computerScoreDisplay.textContent = `${computerScore}`;
+        tempText = "You lose."
     }
+    whoWon.textContent = tempText;
     console.log(`The score is ${humanScore}: ${computerScore}.
         `);
 }
